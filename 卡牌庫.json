@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "name": "火神斬",
+        "description": "造成兩點傷害",
+        "damage": 2,
+        "type": "攻擊",
+        "target": "敵人",
+        "properties": {
+            "element": "火",
+            "destiny": "技"
+        },
+        "uniqueSkill1": "精準射擊",
+        "uniqueSkill2": "疾風技"
+    }
+]

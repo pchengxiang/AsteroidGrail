@@ -1,0 +1,3 @@
+ChainManager: 處理連鎖問題
+Event: 某個角色的動作 
+- Event.target.result:結果(石頭水晶、傷害、治療、棄牌)
