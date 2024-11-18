@@ -1,0 +1,13 @@
+{
+  "files": [],
+  "compilerOptions": {
+    // ... 其他配置
+    "types": ["vite/client"],
+    "composite": true
+  },
+  "include": ["src", "src/env.d.ts"],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ]
+}

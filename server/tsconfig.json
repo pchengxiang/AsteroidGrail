@@ -6,9 +6,9 @@
       "esModuleInterop": true, // 允许 CommonJS 模块和 ES6 模块兼容
       "skipLibCheck": true,    // 跳过库文件的类型检查
       "outDir": "./dist",      // 输出目录
-      "rootDir": "./src"       // 源代码目录
+      "rootDir": "."           // 改为当前目录
     },
-    "include": ["src/**/*"],    // 包含的文件
+    "include": ["./"],      // 修改为使用相对路径
     "exclude": ["node_modules"] // 排除的文件
   }
   
