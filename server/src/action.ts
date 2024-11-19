@@ -30,7 +30,7 @@ enum CostType{
 }
 
 
-enum Phase{
+export enum Phase{
     TurnStart,
     TurnEnd,
     BeforeAction,
@@ -62,7 +62,7 @@ enum Phase{
 }
 
 // 擴展原有的介面，添加事件鏈相關屬性
-interface GameEvent {
+export interface GameEvent {
     phase: Phase;
     source: string;
     chainId?: number;
@@ -78,14 +78,14 @@ interface EventData{
 }
 
 // 事件處理器介面
-interface EventHandler {
+export interface EventHandler {
     priority: number;
     condition?: (event: GameEvent) => boolean;
     effect: (event: GameEvent) => Promise<GameEvent[]>;
 }
 
 // 擴展 EventBus
-class EventBus {
+export class EventBus {
     private static listeners: Record<Phase, EventHandler[]> = {
         [Phase.TurnStart]: [],
         [Phase.TurnEnd]: [],
@@ -116,6 +116,10 @@ class EventBus {
         [Phase.UseShield]: [],
         [Phase.Challenge]: []
     };
+
+    private EventBus(){
+        
+    }
     
     private static chainCounter: number = 0;
     private static eventQueue: GameEvent[] = [];
@@ -202,8 +206,8 @@ class EventBus {
 }
 
 class Player{
-    heal: number;
-    maxHeal: number;
+    heal: number = 0;
+    maxHeal: number = 0;
 }
 
 // 使用示例
