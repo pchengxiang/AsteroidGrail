@@ -16,6 +16,7 @@ const CardContainer = () => {
     e.preventDefault();
     const draggedCardId = e.dataTransfer.getData('cardId');
     // 在這裡處理卡片位置的更新邏輯
+    console.log(draggedCardId);
   };
 
   return (

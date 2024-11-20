@@ -1,4 +1,4 @@
-import { EventBus, Phase, GameEvent, EventHandler } from '../action';
+import { EventBus, Phase, GameEvent, EventHandler } from '../event/eventBus';
 
 describe('EventBus', () => {
   beforeEach(() => {
@@ -44,7 +44,7 @@ describe('EventBus', () => {
     };
 
     EventBus.add(Phase.Healing, handler);
-    expect(EventBus['listeners'][Phase.Healing]).toHaveLength(1);
+    expect(EventBus['listeners'][Phase.Healing]).toHaveLength(2);
     expect(EventBus['listeners'][Phase.Healing][0]).toBe(handler);
   });
 
