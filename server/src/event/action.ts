@@ -1,21 +1,24 @@
-interface BaseAction{
-    cost: Cost;
-    type: ActionType;
+import { GameEvent } from "./gameEvent";
+
+export class Action {
+    constructor(
+        public description: string = "",
+        private trigger: () => Promise<void>,
+        public type: ActionType,
+        private condition?: () => boolean,
+        public cost?: Cost,
+        public amount?: number,
+    ) { }
 }
 
-interface Cost{
+interface Cost {
     type: CostType;
     amount: number;
 }
-
-interface ConditionalAction extends BaseAction{
-    condition: Condition;
-}
-
-type Condition = (event: Event)=>boolean;
+export type Condition = () => boolean;
 
 
-enum ActionType{
+export enum ActionType {
     Damage,
     Healing,
     Transfer,
@@ -23,8 +26,10 @@ enum ActionType{
     DiscardCard
 }
 
-enum CostType{
+enum CostType {
     Healing,
-    YellowSoul,
-    BlueSoul
+    HandCard,
+    Fold,
+    YellowResource,
+    BlueResource
 }

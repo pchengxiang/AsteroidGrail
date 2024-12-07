@@ -1,6 +1,9 @@
 .card-container {
-    display: flex;
-    gap: 16px;
-    padding: 20px;
-    min-height: 200px;
-  }
+  position: absolute;
+  bottom: 0;
+  left: 20vh;
+  display: flex;
+  gap: 16px;
+  padding: 20px;
+  min-height: 200px;
+}
