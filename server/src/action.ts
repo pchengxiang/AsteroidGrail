@@ -116,10 +116,6 @@ export class EventBus {
         [Phase.UseShield]: [],
         [Phase.Challenge]: []
     };
-
-    private EventBus(){
-        
-    }
     
     private static chainCounter: number = 0;
     private static eventQueue: GameEvent[] = [];
