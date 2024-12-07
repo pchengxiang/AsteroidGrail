@@ -1,13 +1,28 @@
 .card {
+  height: 20vh;
   padding: 16px;
   background: white;
   border: 1px solid #ddd;
   border-radius: 8px;
   cursor: grab;
   user-select: none;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  max-height: 200px;
+  /* 設置卡牌最大高度 */
+  overflow: hidden;
+  /* 將多餘的內容隱藏 */
+  transition: max-height 0.5s;
+  /* 設置轉換效果 */
+}
+
+.card-expanded {
+  max-height: 1000px;
+  /* 設置卡牌展開高度 */
+  overflow: visible;
+  /* 將內容顯示 */
 }
 
 .card:active {
   cursor: grabbing;
-} 
+}
